@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+opencv-python
+yt-dlp
+pillow
+numpy
+openai-whisper
+huggingface_hub
