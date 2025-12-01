@@ -496,6 +496,65 @@ print(data["meta"]["global_summary"])
 
 ---
 
+## 🔌 OpenWebUI Tool (ContextVideo)
+
+You can use VideoContext Engine directly from **OpenWebUI** via a custom tool, so that your local chat model can “see” and summarize videos from video links (YouTube, etc.).
+
+- Example tool file: `examples/openwebui/contextvideo_tool.py`
+
+**Quick setup:**
+
+1. Run the engine locally:
+
+```bash
+python VideoContextEngine_v3.19.py
+```
+
+2. In OpenWebUI:  
+   - `Workspace → Tools → New Tool` → paste `contextvideo_tool.py` → save.  
+   - `Workspace → Models → (your model) → Tools` → enable **ContextVideo (Local VideoContext Engine)**.
+
+The tool will detect the latest video URL in the chat, call `POST /api/v1/analyze` with `response_format=text`, then inject the full report back into the conversation and ask the LLM to summarize or answer your question.
+
+---
+
+### 🗣️ Language & prompts
+
+The tool exposes two valves you should customize:
+
+- `scene_prompt` – instructions for **per-scene visual analysis**  
+- `summary_prompt` – instructions for the **global summary**
+
+By default they are in **French** with a word limit.  
+**Edit them in the OpenWebUI tool UI** and rewrite them in **your language** (EN/ES/IT/…), for example:
+
+```text
+scene_prompt:
+"Describe what happens in the scene based on the images, focusing on gestures, posture, mood and context. Maximum 80 words."
+
+summary_prompt:
+"Summarize the whole video clearly and concisely using all scenes as context. Maximum 120 words."
+```
+
+The language of these prompts will drive the language and style of the engine output.
+
+---
+
+### ⚙️ Tips
+
+- I **strongly recommend “warming up” your chat model** in a new chat before using ContextVideo:
+  - send a first short message like `hello` or `bonjour`,
+  - then send your video link and request (summary, analysis, etc.).  
+  This avoids some edge-case issues on the very first request.
+
+- For long videos, you can toggle the `engine_generate_summary` valve:
+  - `true` → engine computes its own global summary (better for long videos),
+  - `false` → let your chat model do the final summarization from the per-scene context.
+
+- If you see: `Error: Could not connect to VideoContextEngine...`  
+  check that the engine is running and, if needed, adjust `videocontext_base_url`
+  in the tool valves (e.g. `http://localhost:7555` or your LAN IP).
+
 ## ✅ Summary
 
 `VideoContext Engine v3.19` is a solid base to:
@@ -505,6 +564,8 @@ print(data["meta"]["global_summary"])
 - compute simple audio metrics (speech/silence, WPM),
 - generate a global summary of the video,
 - and expose everything through a clean HTTP API with either JSON or TXT outputs.
+
+---
 
 Use it:
 
