@@ -1,13 +1,32 @@
-
 # 🎥 VideoContext Engine v3.19 (Qwen3-VL + RAM Modes)
+
+> 🚧 **Status: Public Beta**  
+> The core engine is stable enough for real use on macOS, but the project is still evolving.  
+> Expect possible breaking changes (prompts, models, API parameters). Feedback and PRs are very welcome.
 
 Local-first microservice for **understanding videos**: scene segmentation + Whisper ASR + Qwen3-VL vision-language model + global summary.
 
+## 💬 Community & Questions
 
-> **⚠️ Compatibility Note:**
+If you have questions, ideas or feedback, please use the
+[Discussions](https://github.com/dolphin-creator/VideoContext-Engine/discussions) tab.
+
+Bug reports and feature requests are welcome in the
+[Issues](https://github.com/dolphin-creator/VideoContext-Engine/issues) section.
+
+> ⚠️ **Compatibility note**
 > This project was originally architected and optimized for **macOS (Apple Silicon)** using the MLX framework.
 > While support for **Windows and Linux** has been implemented (via `llama.cpp`), it has **not yet been extensively tested** on these platforms. You may encounter platform-specific bugs or installation hurdles. Feedback is welcome!
 
+> ⚠️ **Windows / Linux (llama.cpp)**
+> Default context size is **4096 tokens** (safe for small/medium videos).
+> For long videos (>15–20 min), the **global summary** may be truncated.
+> If you have **16GB+ RAM**, you can increase it in `VideoContextEngine_v3.19.py`
+> inside the `LlamaCppEngine` class:
+> ```python
+> n_ctx = 16384  # or 32768 for very long videos
+> ```
+> (macOS / MLX users are not affected)
 
 This version `v3.19` is a more industrial, robust evolution of the early 3.x line. It is designed to run **fully locally** (no external LLM calls) and provide structured context that can later be consumed by another LLM or RAG pipeline.
 
