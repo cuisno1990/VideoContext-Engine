@@ -5,6 +5,7 @@
 > Expect possible breaking changes (prompts, models, API parameters). Feedback and PRs are very welcome.
 
 Local-first microservice for **understanding videos**: scene segmentation + Whisper ASR + Qwen3-VL vision-language model + global summary.
+Default VLM is Qwen3-VL 2B, but the engine can be pointed to other MLX / GGUF VLMs via the vlm_model parameter.
 
 ## 💬 Community & Questions
 
@@ -52,6 +53,16 @@ This version `v3.19` is a more industrial, robust evolution of the early 3.x lin
 - 👁️ **Visual Analysis (Qwen3-VL)**
   - macOS: **MLX backend** (`mlx-vlm`) with `mlx-community/Qwen3-VL-2B-Instruct-4bit`
   - Windows / Linux: **llama.cpp backend** with Qwen3-VL GGUF
+  - > 💡 Using other VLMs
+  -Qwen3-VL 2B is just the **default** vision-language model.
+  -You can point `vlm_model` to **any compatible VLM**:
+  - on macOS (MLX): any `mlx-vlm` model ID from Hugging Face
+  - on Windows/Linux (llama.cpp): any GGUF VLM with a vision projector
+  - Example:
+  - `vlm_model=mlx-community/SomeOther-VL-Model`
+  - `vlm_model=/path/to/another-vlm-q4_k_m.gguf`
+  - Behavior and output format stay the same as long as the model follows a Qwen-style VL interface.
+    
   - 1–5 **keyframes per scene** (configurable, default: 1)
   - For each scene, the VLM returns:
     ```jsonc
