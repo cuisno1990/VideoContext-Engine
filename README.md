@@ -567,6 +567,42 @@ The language of these prompts will drive the language and style of the engine ou
   check that the engine is running and, if needed, adjust `videocontext_base_url`
   in the tool valves (e.g. `http://localhost:7555` or your LAN IP).
 
+## 📊 Benchmarks & hardware tests
+
+If you run VideoContext-Engine on your machine (macOS / Windows / Linux), benchmarks are very welcome.  
+When reporting results, please include:
+
+- **Hardware**: CPU, GPU(s), RAM, OS + version
+- **Video**: length, resolution, resolution, content type (screen capture, talking head, etc.)
+- **Settings**: `ram_mode`, `vlm_resolution`, `scene_threshold`, `keyframes_per_scene`, `whisper_model`, etc.
+- **Metrics**:
+  - total wall time and wall time / video length
+  - peak RAM (e.g. `/usr/bin/time -l` on macOS)
+  - MLX tokens/s (cold vs warm), if available
+
+You can either:
+- open a GitHub Issue and add the `benchmark` label, or  
+- post it in GitHub Discussions in the **Showcase / Benchmarks** category.
+
+---
+
+### 🇫🇷 Benchmarks & tests matériels
+
+Si vous testez VideoContext-Engine sur votre machine, vos benchmarks sont les bienvenus 🙌  
+Merci d’indiquer :
+
+- **Matériel** : CPU, GPU(s), RAM, OS + version
+- **Vidéo** : durée, résolution, type de contenu
+- **Paramètres** : `ram_mode`, `vlm_resolution`, `scene_threshold`, `keyframes_per_scene`, `whisper_model`, etc.
+- **Métriques** :
+  - temps total et temps total / durée de la vidéo
+  - RAM maximale utilisée (par ex. `/usr/bin/time -l` sur macOS)
+  - MLX tokens/s (à froid / à chaud), si disponible
+
+Vous pouvez soit :
+- ouvrir une Issue GitHub avec le label `benchmark`,  
+- soit poster dans les Discussions, catégorie **Showcase / Benchmarks**.
+
 ## ✅ Summary
 
 `VideoContext Engine v3.19` is a solid base to:
